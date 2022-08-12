@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boardMapper">
+
+	<!-- 글 하나 불러오기 -->
+	<select id="selectOne" parameterType="int"
+		resultType="com.kiri.dto.BoardDTO">
+		select * from board
+		where seq_board = #{seq_board}
+	</select>
+
+	<!-- 게시글 좋아요 개수 -->
+	<select id="selectLike" parameterType="int" resultType="int">
+		select
+		likehit from board
+		where seq_board = #{seq_board}
+	</select>
+
+	<!-- 조회수 + 1 -->
+	<update id="viewCntUp" parameterType="int">
+		update board set
+		board_count = board_count+1 where seq_board = #{seq_board}
+	</update>
+
+	<!-- 새로운 seq 생성 -->
+	<select id="selectSeq" resultType="int">
+		select seq_board.nextval from
+		dual
+	</select>
+
+	<!-- 글쓰기 -->
+	<insert id="write" parameterType="com.kiri.dto.BoardDTO">
+		insert into board
+		values(#{seq_board}, #{user_email}, #{user_nickname}
+		, #{board_category}, #{board_title}, #{board_content}
+		, sysdate, 0, 0)
+	</insert>
+
+	<!-- 글 수정 -->
+	<update id="modify" parameterType="com.kiri.dto.BoardDTO">
+		update board set
+		board_title = #{board_title}
+		, board_content = #{board_content}
+		where seq_board = #{seq_board}
+	</update>
+
+	<!-- 글 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from board
+		where seq_board = #{seq_board}
+	</delete>
+
+	<!-- 페이징 -->
+	<!-- 검색 조건문 -->
+	<sql id="criteria">
+		<trim prefix="AND (" suffix=")" prefixOverrides="OR">
+			<foreach collection="typeArr" item="type">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							board_title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							board_content like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							user_nickname like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
+	<!-- 게시물 목록(페이징) -->
+	<select id="getListPaging"
+		parameterType="com.kiri.utills.Criteria"
+		resultType="com.kiri.dto.BoardDTO">
+		select * from
+		(select /*+ index_desc(board board_index) */ rownum as rn, board.*
+		from board where
+		<if test="category != '공지'">
+			board_category not like '%'|| '공지' ||'%' and
+		</if>
+			<![CDATA[
+              			rownum <= #{pageNum} * #{amount}
+			]]>
+		<if test="keyword != null">
+			<include refid="criteria"></include>
+		</if>
+		<if test="category != null">
+			and board_category like '%'||#{category}||'%'
+		</if>
+		<![CDATA[
+				)
+			where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+
+	<!-- 공지사항 상단 3개 정렬 -->
+	<select id="getNotice" resultType="com.kiri.dto.BoardDTO">
+		select * from
+		(select * from board
+		where board_category='공지'
+		order by seq_board desc)
+			<![CDATA[
+			where ROWNUM <=3 order by seq_board desc
+			]]>
+	</select>
+
+	<!-- <select id="getListPaging" parameterType="com.kiri.utills.Criteria" 
+		resultType="com.kiri.dto.BoardDTO"> <![CDATA[ select * from (select rownum 
+		as rn, A.* from (select * from board order by (case when board_category = 
+		'공지' then 1 else 2 end), seq_board desc) A where rownum <= #{pageNum} * #{amount} 
+		]]> <if test="keyword != null"> <include refid="criteria"></include> </if> 
+		<if test="category != null"> and board_category like '%'||#{category}||'%' 
+		</if> <![CDATA[ ) where rn > (#{pageNum} -1) * #{amount} ]]> </select> -->
+
+	<!-- 게시물 총 개수 -->
+	<!-- seq_board > 0은 의미없는 조건이지만 삽입될 쿼리가 and()형식이라 구문오류 방지를 위해 작성 -->
+	<select id="getTotal" parameterType="com.kiri.utills.Criteria"
+		resultType="int">
+		select count(*) from board where seq_board > 0
+		<if test="category != '공지'">
+			and board_category not like '%'|| '공지' ||'%'
+		</if>
+		<if test="keyword != null">
+			<include refid="criteria"></include>
+		</if>
+		<if test="category != null">
+			and board_category like '%'||#{category}||'%'
+		</if>
+	</select>
+	
+	<!-- 메인페이지 보드 좋아요 많은거 두개 뽑기 -->
+	<select id="getBestBoard" resultType="com.kiri.dto.BoardDTO">
+		<![CDATA[select * from board 
+			where seq_board in(select seq_board from (select row_number() over(order by likehit desc, board_date desc) as ranking, seq_board from board where board_category not like '%공지%') where ranking<3) order by 9 desc
+		]]>
+	</select>
+	
+	<select id="getSysname" parameterType="int" resultType="String">
+		<![CDATA[select sys_name from (select rownum, sys_name from board_file where rownum=1 and seq_board=#{seq_board})]]>
+	</select>
+	
+</mapper>
