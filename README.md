@@ -134,6 +134,7 @@
 
 ## 📑 기타 문서
 * [전체 PPT](https://github.com/kimyeong96/Final_project/blob/main/ppt/%EC%A0%84%EC%B2%B4%20ppt.pptx)
+* [기능화면 PPT](https://github.com/kimyeong96/Final_Project/blob/main/ppt/%EA%B8%B0%EB%8A%A5%ED%99%94%EB%A9%B4.pptx)
 * [DB](https://github.com/kimyeong96/Final_project/blob/main/screenshoots/DB.png)
 
 
