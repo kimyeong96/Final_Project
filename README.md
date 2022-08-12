@@ -71,41 +71,41 @@
 
 > code
 * jsp
-  * [모임 생성](https://github.com/kimyeong96/Final-project/blob/main/src/main/webapp/WEB-INF/views/group/createGroup.jsp)
-  * [모임 수정](https://github.com/kimyeong96/Final-project/blob/main/src/main/webapp/WEB-INF/views/group/modifyGroup.jsp)
-  * [모임 상세](https://github.com/kimyeong96/Final-project/blob/main/src/main/webapp/WEB-INF/views/group/groupDetail.jsp)
-  * [모임 일정](https://github.com/kimyeong96/Final-project/blob/main/src/main/webapp/WEB-INF/views/group/groupCalendar.jsp)
-  * [모임 전체 목록](https://github.com/kimyeong96/Final-project/blob/main/src/main/webapp/WEB-INF/views/user/viewAllGroupList.jsp)
-  * [모임 카테고리별 목록](https://github.com/kimyeong96/Final-project/blob/main/src/main/webapp/WEB-INF/views/user/categorySelected.jsp)
-  * [모임 지역별 목록](https://github.com/kimyeong96/Final-project/blob/main/src/main/webapp/WEB-INF/views/user/siteSelected.jsp)
-  * [관리자 메인](https://github.com/kimyeong96/Final-project/blob/main/src/main/webapp/WEB-INF/views/admin/adminMain.jsp)
+  * [모임 생성](https://github.com/kimyeong96/Final_Project/blob/main/src/main/webapp/WEB-INF/views/group/createGroup.jsp)
+  * [모임 수정](https://github.com/kimyeong96/Final_project/blob/main/src/main/webapp/WEB-INF/views/group/modifyGroup.jsp)
+  * [모임 상세](https://github.com/kimyeong96/Final_project/blob/main/src/main/webapp/WEB-INF/views/group/groupDetail.jsp)
+  * [모임 일정](https://github.com/kimyeong96/Final_project/blob/main/src/main/webapp/WEB-INF/views/group/groupCalendar.jsp)
+  * [모임 전체 목록](https://github.com/kimyeong96/Final_project/blob/main/src/main/webapp/WEB-INF/views/user/viewAllGroupList.jsp)
+  * [모임 카테고리별 목록](https://github.com/kimyeong96/Final_project/blob/main/src/main/webapp/WEB-INF/views/user/categorySelected.jsp)
+  * [모임 지역별 목록](https://github.com/kimyeong96/Final_project/blob/main/src/main/webapp/WEB-INF/views/user/siteSelected.jsp)
+  * [관리자 메인](https://github.com/kimyeong96/Final_project/blob/main/src/main/webapp/WEB-INF/views/admin/adminMain.jsp)
 
 * Controller
-  * [모임 관련](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/controller/GroupController.java)
-  * [모임 일정](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/controller/GroupCalendar.java)
-  * [모임 목록](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/controller/UserController.java)
-  * [관리자](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/controller/AdminController.java)
+  * [모임 관련](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/controller/GroupController.java)
+  * [모임 일정](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/controller/GroupCalendar.java)
+  * [모임 목록](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/controller/UserController.java)
+  * [관리자](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/controller/AdminController.java)
 
 * Service
-  * [모임 관련](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/service/Tbl_GroupService.java)
-  * [모임 일정](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/service/GroupCalendarService.java)
-  * [쪽지](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/service/MessageService.java)
-  * [모임 목록](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/service/UserService.java)
-  * [관리자](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/service/AdminService.java)
+  * [모임 관련](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/service/Tbl_GroupService.java)
+  * [모임 일정](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/service/GroupCalendarService.java)
+  * [쪽지](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/service/MessageService.java)
+  * [모임 목록](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/service/UserService.java)
+  * [관리자](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/service/AdminService.java)
 
 * DAO
-  * [모임 관련](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/dao/Tbl_GroupDAO.java)
-  * [모임 일정](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/dao/UserDAO.java)
-  * [쪽지](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/dao/MessageDAO.java)
-  * [모임 목록](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/dao/UserDAO.java)
-  * [관리자](https://github.com/kimyeong96/Final-project/blob/main/src/main/java/com/kiri/dao/AdminDAO.java)
+  * [모임 관련](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/dao/Tbl_GroupDAO.java)
+  * [모임 일정](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/dao/UserDAO.java)
+  * [쪽지](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/dao/MessageDAO.java)
+  * [모임 목록](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/dao/UserDAO.java)
+  * [관리자](https://github.com/kimyeong96/Final_project/blob/main/src/main/java/com/kiri/dao/AdminDAO.java)
 
 * Mapper
-  * [모임 관련](https://github.com/kimyeong96/Final-project/blob/main/src/main/resources/mappers/group-mapper.xml)
-  * [모임 일정](https://github.com/kimyeong96/Final-project/blob/main/src/main/resources/mappers/group-calendar-mapper.xml)
-  * [쪽지](https://github.com/kimyeong96/Final-project/blob/main/src/main/resources/mappers/message-mapper.xml)
-  * [모임 목록](https://github.com/kimyeong96/Final-project/blob/main/src/main/resources/mappers/user-mapper.xml)
-  * [관리자](https://github.com/kimyeong96/Final-project/blob/main/src/main/resources/mappers/admin-mapper.xml)
+  * [모임 관련](https://github.com/kimyeong96/Final_project/blob/main/src/main/resources/mappers/group-mapper.xml)
+  * [모임 일정](https://github.com/kimyeong96/Final_project/blob/main/src/main/resources/mappers/group-calendar-mapper.xml)
+  * [쪽지](https://github.com/kimyeong96/Final_project/blob/main/src/main/resources/mappers/message-mapper.xml)
+  * [모임 목록](https://github.com/kimyeong96/Final_project/blob/main/src/main/resources/mappers/user-mapper.xml)
+  * [관리자](https://github.com/kimyeong96/Final_project/blob/main/src/main/resources/mappers/admin-mapper.xml)
 ---------------------------------------
 
 
