@@ -1,4 +1,4 @@
-# 파이널 프로젝트 
+# 파이널 프로젝트
 ![로고](./screenshoots/logo.png)
 
 ## 📖 프로젝트 개요
@@ -66,7 +66,7 @@
 
 #### 직책 : 팀원
 
-#### 담당 기능 : 모임 생성 및 수정, 모임 상세페이지, 모임 일정, 모임 목록 보여주기(카테고리, 지역), 모임 쪽지, 관리자 메인 
+#### 담당 기능 : 모임 생성 및 수정, 모임 상세페이지, 모임 일정, 모임 목록 보여주기(카테고리, 지역), 모임 쪽지, 관리자 메인
 
 
 > code
@@ -133,7 +133,7 @@
 ---------------------------------------
 
 ## 📑 기타 문서
-* [전체 PPT](https://github.com/kimyeong96/Final-project/blob/main/ppt/%EC%A0%84%EC%B2%B4%20ppt.pptx)
-* [DB](https://github.com/kimyeong96/Final-project/blob/main/screenshoots/DB.png)
+* [전체 PPT](https://github.com/kimyeong96/Final_project/blob/main/ppt/%EC%A0%84%EC%B2%B4%20ppt.pptx)
+* [DB](https://github.com/kimyeong96/Final_project/blob/main/screenshoots/DB.png)
 
 
